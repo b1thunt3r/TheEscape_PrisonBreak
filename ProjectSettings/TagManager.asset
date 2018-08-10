@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Wall
+  - Enemy
+  - PauseCanvas
+  - Door
+  - KeysContainer
+  - DoorWithKey
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - Level
+  - Enimies
+  - HUD
+  - Pause
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Level
+    uniqueID: 533200391
+    locked: 0
+  - name: Enimies
+    uniqueID: 1724537931
+    locked: 0
+  - name: Player
+    uniqueID: 1050189505
+    locked: 0
+  - name: Pause Menu
+    uniqueID: 1163138561
+    locked: 0
+  - name: HUD
+    uniqueID: 2149775599
+    locked: 0
