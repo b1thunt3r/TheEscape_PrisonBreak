@@ -25,7 +25,7 @@ public class PlayerState
                     keyObject.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
                     instance.Keys[i] = new KeyWrapper
                     {
-                        Color = KeyColors.KeyColor.None,
+                        Color = StandardColor.None,
                         GameObject = keyObject
                     };
                 }

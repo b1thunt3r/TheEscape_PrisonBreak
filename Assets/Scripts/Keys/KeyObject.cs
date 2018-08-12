@@ -1,16 +1,15 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class KeyObject : MonoBehaviour
 {
-    public KeyColors.KeyColor Color;
+    public StandardColor Color;
     private KeyManager keyManager;
 
     public void Start()
     {
         keyManager = GameHelpers.GetHUDKeyManager();
         SpriteRenderer spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        Color color = KeyColors.Colors[Color];
+        Color color = Color.GetColor();
         spriteRenderer.color = color;
     }
 

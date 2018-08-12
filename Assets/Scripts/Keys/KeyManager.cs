@@ -20,30 +20,30 @@ public class KeyManager : MonoBehaviour
                 key.GameObject = keyContainer.transform.GetChild(i).gameObject;
             }
 
-            key.Render.color = KeyColors.Colors[key.Color];
+            key.Render.color = key.Color.GetColor();
         }
     }
 
-    public void Add(KeyColors.KeyColor color)
+    public void Add(StandardColor color)
     {
-        var key = playerState.Keys.FirstOrDefault(k => k.Color == KeyColors.KeyColor.None);
+        var key = playerState.Keys.FirstOrDefault(k => k.Color == StandardColor.None);
 
         if (key != null)
         {
             key.Color = color;
-            key.Render.color = KeyColors.Colors[color];
+            key.Render.color = color.GetColor();
             key.GameObject.SetActive(true);
         }
     }
 
-    public Boolean Use(KeyColors.KeyColor color)
+    public Boolean Use(StandardColor color)
     {
         var key = playerState.Keys.FirstOrDefault(k => k.Color == color);
 
         if (key != null)
         {
-            key.Color = KeyColors.KeyColor.None;
-            key.Render.color = KeyColors.Colors[key.Color];
+            key.Color = StandardColor.None;
+            key.Render.color = key.Color.GetColor();
             key.GameObject.SetActive(false);
 
             return true;

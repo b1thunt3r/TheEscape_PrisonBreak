@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class DoorObject : MonoBehaviour
 {
 
-    public KeyColors.KeyColor Color;
+    public StandardColor Color;
     private KeyManager keyManager;
     private LevelSettings levelSettings;
 
@@ -14,17 +13,20 @@ public class DoorObject : MonoBehaviour
         keyManager = GameHelpers.GetHUDKeyManager();
         levelSettings = GameHelpers.GetLevelSettings();
 
-        var keyObject = gameObject.transform.Find(StaticNames.DoorKey).gameObject;
-        SpriteRenderer spriteRenderer = keyObject.GetComponent<SpriteRenderer>();
-        Color color = KeyColors.Colors[Color];
-        spriteRenderer.color = color;
+        if (Color != StandardColor.None)
+        {
+            var keyObject = gameObject.transform.Find(StaticNames.DoorKey).gameObject;
+            SpriteRenderer spriteRenderer = keyObject.GetComponent<SpriteRenderer>();
+            Color color = Color.GetColor();
+            spriteRenderer.color = color;
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (keyManager.Use(Color) || Color == KeyColors.KeyColor.None)
+        if (keyManager.Use(Color) || Color == StandardColor.None)
         {
-            GameHelpers.LoadScene(levelSettings.NextLevel);
+            GameHelpers.LoadScene(levelSettings.NextScene);
         }
     }
 }

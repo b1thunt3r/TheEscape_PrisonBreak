@@ -2,7 +2,7 @@
 
 public class KeyWrapper
 {
-    public KeyColors.KeyColor Color { get; set; }
+    public StandardColor Color { get; set; }
     public GameObject GameObject { get; set; }
     public SpriteRenderer Render
     {
