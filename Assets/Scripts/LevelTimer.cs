@@ -5,61 +5,62 @@ using UnityEngine;
 
 public class LevelTimer : MonoBehaviour
 {
-    private Byte timeLeft;
+    private Single timeLeft;
     private TextMeshPro textComponent;
+    private Animator animatorComponent;
 
     // Use this for initialization
     public void Start()
     {
 #if UNITY_EDITOR
-        timeLeft = 255;
+        timeLeft = 10;
 #else
         timeLeft = GameHelpers.GetLevelSettings().MaxTimer;
 #endif
 
-        StartCoroutine("CountDown");
         Time.timeScale = 1;
 
         textComponent = gameObject.GetComponent<TextMeshPro>();
+
+        animatorComponent = gameObject.GetComponent<Animator>();
+        animatorComponent.enabled = false;
     }
 
     // Update is called once per frame
     public void Update()
     {
-        if (timeLeft <= 0)
+        timeLeft -= Time.deltaTime;
+
+        if (timeLeft <= 0f)
         {
             GameHelpers.GetPlayerController().Die();
         }
 
-        if (timeLeft <= 3)
+        if (timeLeft <= 6f)
         {
-            textComponent.color = new Color(192, 0, 0);
+            textComponent.color = StandardColor.Red.GetColor();
         }
         else
         {
-            textComponent.color = new Color(255, 255, 255);
+            textComponent.color = StandardColor.White.GetColor();
         }
 
-        textComponent.text = string.Format("{0,3:000}", timeLeft);
-    }
-
-    private IEnumerator CountDown()
-    {
-        while (true)
+        if (timeLeft < 4f)
         {
-            yield return new WaitForSeconds(1);
-            timeLeft--;
+            animatorComponent.enabled = true;
         }
+
+        textComponent.text = string.Format("{0,3:0}", timeLeft);
     }
 
     public void IncreaseTime(int time)
     {
-        time += timeLeft;
+        time += (Int32)timeLeft;
         if (time > 255)
         {
             time = 255;
         }
 
-        timeLeft = (Byte)time;
+        timeLeft = time;
     }
 }
