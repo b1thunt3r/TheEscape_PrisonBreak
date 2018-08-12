@@ -3,6 +3,8 @@ using System.Reflection;
 
 public enum Scene
 {
+    [Scene("Assets/Scenes/TitleScreen.unity")]
+    TitleSreen,
     [Scene("Assets/Scenes/MainMenu.unity")]
     MainMenu,
     [Scene("Assets/Scenes/Captured.unity")]
@@ -14,7 +16,7 @@ public enum Scene
     [Scene("Assets/Scenes/Levels/Level03.unity")]
     Level03,
     [Scene("Assets/Scenes/Levels/Level04.unity")]
-    Level04
+    Level04,
 }
 
 public static class SceneValue

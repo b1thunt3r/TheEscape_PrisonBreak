@@ -11,34 +11,41 @@ public class PlayerState
         {
             if (instance == null)
             {
-                instance = new PlayerState
-                {
-                    Keys = new KeyWrapper[6]
-                };
-
-                var keyContainer = GameHelpers.GetHUDKeysContainer();
-
-                for (int i = 0; i < 6; i++)
-                {
-                    var keyObject = keyContainer.transform.GetChild(i).gameObject;
-                    keyObject.SetActive(false);
-                    keyObject.GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
-                    instance.Keys[i] = new KeyWrapper
-                    {
-                        Color = StandardColor.None,
-                        GameObject = keyObject
-                    };
-                }
+                Reset();
             }
 
             return instance;
         }
     }
-    
+
+    public static void Reset()
+    {
+        instance = new PlayerState
+        {
+            Keys = new KeyWrapper[]
+            {
+                new KeyWrapper(),
+                new KeyWrapper(),
+                new KeyWrapper(),
+                new KeyWrapper(),
+                new KeyWrapper(),
+                new KeyWrapper()
+            }
+        };
+    }
+
     private Byte slowDownPowerUp = 0;
     private Byte hidePowerUp = 0;
+    private Int32 totalScore = 0;
 
     public KeyWrapper[] Keys { get; set; }
+    public Int32 Score
+    {
+        get
+        {
+            return totalScore;
+        }
+    }
 
     public void SetCount(PowerUpType powerUp, Byte count)
     {
@@ -53,6 +60,11 @@ public class PlayerState
             default:
                 break;
         }
+    }
+
+    public void AddScore(Int32 score)
+    {
+        totalScore += score;
     }
 
     public Byte GetCount(PowerUpType powerUp)

@@ -6,8 +6,10 @@ public class LevelSettings : MonoBehaviour
 {
     public Byte Level = 0;
     public String Name = "Level Name";
-    public Byte MaxTimer = 50;
+    public Single MaxTimer = 50;
     public Scene NextScene;
+    public Vector2 BoundsMin = new Vector2(-9, -5);
+    public Vector2 BoundsMax = new Vector2(13, 5);
 
     public void Start()
     {

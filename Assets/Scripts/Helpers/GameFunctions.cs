@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class GameFunctions : MonoBehaviour
 {
-    #region Load Scene
-
     public void LoadMainMenu()
     {
         GameHelpers.LoadScene(Scene.MainMenu);
     }
 
-    public void StartGame()
+    public void NewGame()
     {
         GameHelpers.LoadScene(Scene.Level01);
     }
-    #endregion
 
-    #region Game
+    public void StartGame()
+    {
+        PlayerState.Reset();
+        GameHelpers.LoadScene(Scene.Level01);
+    }
+
     public void Pause()
     {
         GameHelpers.Pause();
@@ -27,5 +29,4 @@ public class GameFunctions : MonoBehaviour
     {
         GameHelpers.Exit();
     }
-    #endregion
 }

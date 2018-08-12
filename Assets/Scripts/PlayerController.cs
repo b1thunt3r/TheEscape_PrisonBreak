@@ -7,11 +7,13 @@ public class PlayerController : MonoBehaviour
     public Single movementSpeed = 8;
     private Rigidbody2D playerBody;
     private Boolean isGrounded;
+    private LevelSettings levelSettings;
 
     // Use this for initialization
     public void Start()
     {
         playerBody = GetComponent<Rigidbody2D>();
+        levelSettings = GameHelpers.GetLevelSettings();
     }
 
     // Update is called once per frame
@@ -25,13 +27,18 @@ public class PlayerController : MonoBehaviour
 
         var move = Input.GetAxis(StaticNames.AxisX);
         playerBody.velocity = new Vector2(move * movementSpeed, playerBody.velocity.y);
+
+        if (playerBody.position.y < (levelSettings.BoundsMin.y - 0.5f))
+        {
+            Die();
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         switch (collision.collider.tag)
         {
-            case StaticNames.TagWall:
+            case StaticNames.TagGround:
                 isGrounded = true;
                 break;
             case StaticNames.TagEnemy:

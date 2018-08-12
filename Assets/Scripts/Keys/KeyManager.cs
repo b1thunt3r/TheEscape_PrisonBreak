@@ -15,6 +15,7 @@ public class KeyManager : MonoBehaviour
         for (int i = 0; i < 6; i++)
         {
             var key = playerState.Keys[i];
+
             if (key.GameObject == null)
             {
                 key.GameObject = keyContainer.transform.GetChild(i).gameObject;

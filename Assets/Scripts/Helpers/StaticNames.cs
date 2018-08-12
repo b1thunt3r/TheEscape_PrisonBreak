@@ -12,9 +12,9 @@ public static class StaticNames
     public const String ButtonJump = "Jump";
     public const String ButtonCancel = "Cancel";
 
-    public const String TagWall = "Wall";
+    public const String TagGround = "Ground";
     public const String TagEnemy = "Enemy";
-    public const String TagDoor = "Door";
+    public const String TagEnemyWall = "EnemyWall";
 
     public const String HUDGridObject = "HUDGrid";
     public const String HUDLevelTimeLeftObject = "LevelTimeLeft";

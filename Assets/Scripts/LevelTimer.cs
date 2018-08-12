@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class LevelTimer : MonoBehaviour
 {
     private Single timeLeft;
@@ -13,7 +14,7 @@ public class LevelTimer : MonoBehaviour
     public void Start()
     {
 #if UNITY_EDITOR
-        timeLeft = 10;
+        timeLeft = 255;
 #else
         timeLeft = GameHelpers.GetLevelSettings().MaxTimer;
 #endif
@@ -24,6 +25,7 @@ public class LevelTimer : MonoBehaviour
 
         animatorComponent = gameObject.GetComponent<Animator>();
         animatorComponent.enabled = false;
+
     }
 
     // Update is called once per frame
@@ -36,7 +38,7 @@ public class LevelTimer : MonoBehaviour
             GameHelpers.GetPlayerController().Die();
         }
 
-        if (timeLeft <= 6f)
+        if (timeLeft < 5.51f)
         {
             textComponent.color = StandardColor.Red.GetColor();
         }
@@ -45,7 +47,7 @@ public class LevelTimer : MonoBehaviour
             textComponent.color = StandardColor.White.GetColor();
         }
 
-        if (timeLeft < 4f)
+        if (timeLeft < 3.51f)
         {
             animatorComponent.enabled = true;
         }
@@ -62,5 +64,10 @@ public class LevelTimer : MonoBehaviour
         }
 
         timeLeft = time;
+    }
+
+    public Single GetRemainingTime()
+    {
+        return timeLeft;
     }
 }

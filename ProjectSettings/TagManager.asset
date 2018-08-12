@@ -4,12 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Wall
   - Enemy
-  - PauseCanvas
   - Door
   - KeysContainer
-  - DoorWithKey
+  - Ground
+  - EnemyWall
   layers:
   - Default
   - TransparentFX
@@ -24,7 +23,7 @@ TagManager:
   - Enimies
   - HUD
   - Pause
-  - 
+  - Fade
   - 
   - 
   - 
