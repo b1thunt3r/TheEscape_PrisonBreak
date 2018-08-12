@@ -5,13 +5,7 @@ public static class StaticNames
     public const String Player = "Player";
     public const String PauseCanvas = "PauseCanvas";
     public const String PauseUI = "PauseUI";
-
-    public const String SceneCaptured = "Captured";
-    public const String SceneMainMenu = "MainMenu";
-    public const String SceneLevel01 = "Level01";
-    public const String SceneLevel02 = "Level02";
-    public const String SceneLevel03 = "Level03";
-
+    
     public const String AxisY = "Vertical";
     public const String AxisX = "Horizontal";
 

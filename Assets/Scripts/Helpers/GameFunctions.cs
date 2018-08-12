@@ -5,20 +5,16 @@ using UnityEngine;
 public class GameFunctions : MonoBehaviour
 {
     #region Load Scene
-    public void LoadScene(Int32 sceneIndex)
+
+    public void LoadMainMenu()
     {
-        GameHelpers.LoadScene(sceneIndex);
+        GameHelpers.LoadScene(Scene.MainMenu);
     }
 
-    public void LoadScene(String sceneName)
+    public void StartGame()
     {
-        GameHelpers.LoadScene(sceneName);
+        GameHelpers.LoadScene(Scene.Level01);
     }
-
-    //public void LoadScene(SceneAsset scene)
-    //{
-    //    GameHelpers.LoadScene(scene);
-    //}
     #endregion
 
     #region Game

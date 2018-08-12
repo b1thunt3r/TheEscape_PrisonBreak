@@ -3979,6 +3979,11 @@ Prefab:
       propertyPath: Name
       value: Another Easy One
       objectReference: {fileID: 0}
+    - target: {fileID: 114898257285390778, guid: 1ecde44f7763dab4c848ff8ec37c7650,
+        type: 2}
+      propertyPath: NextScene
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ecde44f7763dab4c848ff8ec37c7650, type: 2}
   m_IsPrefabAsset: 0

@@ -44,6 +44,6 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        GameHelpers.LoadScene(StaticNames.SceneCaptured);
+        GameHelpers.LoadScene(Scene.Captured);
     }
 }

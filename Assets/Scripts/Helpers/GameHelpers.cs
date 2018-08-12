@@ -16,10 +16,10 @@ public class GameHelpers
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 
-    //public static void LoadScene(SceneAsset scene)
-    //{
-    //    SceneManager.LoadScene(scene.name, LoadSceneMode.Single);
-    //}
+    public static void LoadScene(Scene scene)
+    {
+        LoadScene(scene.GetValue());
+    }
     #endregion
 
     #region Game

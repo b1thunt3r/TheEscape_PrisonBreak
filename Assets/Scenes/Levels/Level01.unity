@@ -620,7 +620,22 @@ Prefab:
     - target: {fileID: 114898257285390778, guid: 1ecde44f7763dab4c848ff8ec37c7650,
         type: 2}
       propertyPath: NextLevel
-      value: Level02
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114898257285390778, guid: 1ecde44f7763dab4c848ff8ec37c7650,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114898257285390778, guid: 1ecde44f7763dab4c848ff8ec37c7650,
+        type: 2}
+      propertyPath: Level
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114898257285390778, guid: 1ecde44f7763dab4c848ff8ec37c7650,
+        type: 2}
+      propertyPath: NextScene
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ecde44f7763dab4c848ff8ec37c7650, type: 2}

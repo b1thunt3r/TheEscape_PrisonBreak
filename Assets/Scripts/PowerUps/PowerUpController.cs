@@ -43,10 +43,10 @@ public class PowerUpController : MonoBehaviour
         }
         else
         {
-            timeLeftComponent.text = String.Format("{0,3:000}", timeLeft);
+            timeLeftComponent.text = String.Format("{0,3:0}", timeLeft);
         }
         
-        leftComponent.text = String.Format("{0,2:00}", playerState.GetCount(PowerUp));
+        leftComponent.text = String.Format("{0,2:0}", playerState.GetCount(PowerUp));
 
     }
 
